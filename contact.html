@@ -185,34 +185,36 @@
 
     <!-- Google Sheets Script -->
     <script>
-    const form = document.forms['contact-form'];
-    const feedbackMessage = document.getElementById('feedback-message');
+const scriptURL = 'ضع هنا رابط Web App الجديد';
+const form = document.forms['contact-form'];
+const feedbackMessage = document.getElementById('feedback-message');
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        feedbackMessage.innerHTML = "Sending...";
-        feedbackMessage.className = "feedback-message loading";
-        feedbackMessage.style.display = "block";
+    feedbackMessage.innerHTML = 'Sending...';
+    feedbackMessage.style.display = 'block';
 
-        const formData = Object.fromEntries(new FormData(form).entries());
-
-        google.script.run
-            .withSuccessHandler(function() {
-                feedbackMessage.innerHTML = "Message sent successfully! We'll get back to you soon.";
-                feedbackMessage.className = "feedback-message success";
-                form.reset();
-
-                setTimeout(() => {
-                    feedbackMessage.style.display = "none";
-                }, 5000);
-            })
-            .withFailureHandler(function() {
-                feedbackMessage.innerHTML = "Oops! Something went wrong. Please try again.";
-                feedbackMessage.className = "feedback-message error";
-            })
-            .saveData(formData);
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'cors',   // مهم
+        body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.status === "Success") {
+            feedbackMessage.innerHTML = 'Message sent successfully!';
+            form.reset();
+        } else {
+            feedbackMessage.innerHTML = 'Error from server';
+        }
+    })
+    .catch(error => {
+        feedbackMessage.innerHTML = 'Something went wrong!';
+        console.log(error);
     });
+});
 </script>
 </body>
+
 </html>
