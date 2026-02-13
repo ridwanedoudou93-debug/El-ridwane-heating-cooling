@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCF - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">RCF</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="title">Contact Us</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Algiers, Algeria</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+213 XXX XXX XXX</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@rcf.dz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+    <h3>Send Us a Message</h3>
+    <form id="contactForm" name="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        
+        <!-- THIS IS THE NEW FEEDBACK RATING PART -->
+        <div class="feedback-rating">
+            <label>Rate Your Experience:</label>
+            <div class="rating-stars">
+                <input type="radio" name="rating" value="5" id="star5" required>
+                <label for="star5" title="Excellent">★</label>
+                
+                <input type="radio" name="rating" value="4" id="star4">
+                <label for="star4" title="Very Good">★</label>
+                
+                <input type="radio" name="rating" value="3" id="star3">
+                <label for="star3" title="Good">★</label>
+                
+                <input type="radio" name="rating" value="2" id="star2">
+                <label for="star2" title="Fair">★</label>
+                
+                <input type="radio" name="rating" value="1" id="star1">
+                <label for="star1" title="Poor">★</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div id="feedback-message" class="feedback-message"></div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Contact Cards -->
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's Connect</h2>
+        <div class="content">
+            
+            <!-- WhatsApp Card -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="info">
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/213XXXXXXXXX" target="_blank" class="copy-btn">
+                        Message us on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Facebook Card -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="info">
+                    <h3>Facebook</h3>
+                    <a href="https://facebook.com/yourpage" target="_blank" class="copy-btn">
+                        Visit our Facebook page
+                    </a>
+                </div>
+            </div>
+
+            <!-- TikTok Card -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <div class="info">
+                    <h3>TikTok</h3>
+                    <a href="https://tiktok.com/@yourpage" target="_blank" class="copy-btn">
+                        Follow us on TikTok
+                    </a>
+                </div>
+            </div>
+
+            <!-- Instagram Card (Optional) -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="info">
+                    <h3>Instagram</h3>
+                    <a href="https://instagram.com/yourpage" target="_blank" class="copy-btn">
+                        Follow us on Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Call Us</h3>
+                    <a href="tel:+213XXXXXXXXX" class="copy-btn">
+                        +213 XXX XXX XXX
+                    </a>
+                </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <a href="mailto:info@rcf.dz?subject=Inquiry&body=Hello RCF," class="copy-btn">
+                        Send us an email
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RCF. All rights reserved.</p>
+    </footer>
+
+    <!-- Google Sheets Script -->
+    <script>
+    const form = document.forms['contact-form'];
+    const feedbackMessage = document.getElementById('feedback-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        feedbackMessage.innerHTML = "Sending...";
+        feedbackMessage.className = "feedback-message loading";
+        feedbackMessage.style.display = "block";
+
+        const formData = Object.fromEntries(new FormData(form).entries());
+
+        google.script.run
+            .withSuccessHandler(function() {
+                feedbackMessage.innerHTML = "Message sent successfully! We'll get back to you soon.";
+                feedbackMessage.className = "feedback-message success";
+                form.reset();
+
+                setTimeout(() => {
+                    feedbackMessage.style.display = "none";
+                }, 5000);
+            })
+            .withFailureHandler(function() {
+                feedbackMessage.innerHTML = "Oops! Something went wrong. Please try again.";
+                feedbackMessage.className = "feedback-message error";
+            })
+            .saveData(formData);
+    });
+</script>
+</body>
+</html>
